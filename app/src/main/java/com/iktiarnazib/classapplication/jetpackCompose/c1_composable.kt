@@ -1,13 +1,17 @@
 package com.iktiarnazib.classapplication.jetpackCompose
 
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Label
+import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
+import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -29,9 +33,9 @@ fun TextExample(name: String, modifier: Modifier = Modifier) {
     )
 }
 
-@Preview(showBackground = true, showSystemUi = true)
+
 @Composable
-fun TextFieldExample() {
+fun TextFieldExample(modifier: Modifier = Modifier) {
     var name = remember { mutableStateOf("") }
     TextField(
         value = name.value,
@@ -40,6 +44,27 @@ fun TextFieldExample() {
         leadingIcon = {Text("*")},
         trailingIcon = {Text("#")},
         singleLine = true,
-        shape = RoundedCornerShape(5.dp)
+        shape = RoundedCornerShape(5.dp),
+        colors = TextFieldDefaults.colors(
+            focusedTextColor = Color.Gray,
+            unfocusedTextColor = Color.Red
+        ),
+        modifier = modifier,
+    )
+}
+
+@Preview(showBackground = true, showSystemUi = true)
+@Composable
+fun TextFormFieldExample(modifier: Modifier = Modifier) {
+    var name =  remember { mutableStateOf("") }
+    OutlinedTextField(
+        value = name.value,
+        onValueChange = {
+            name.value = it;
+        },
+        label = ({Text("Preview Text")}),
+        modifier = modifier,
+        leadingIcon = {Text("x")},
+        shape = RoundedCornerShape(20.dp)
     )
 }
