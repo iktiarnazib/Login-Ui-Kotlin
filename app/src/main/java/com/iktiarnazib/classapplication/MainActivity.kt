@@ -11,7 +11,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.iktiarnazib.classapplication.jetpackCompose.textExample
+import com.iktiarnazib.classapplication.jetpackCompose.TextExample
+import com.iktiarnazib.classapplication.jetpackCompose.TextFieldExample
+import com.iktiarnazib.classapplication.jetpackCompose.TextExample
 import com.iktiarnazib.classapplication.ui.theme.ClassApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -21,9 +23,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             ClassApplicationTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    textExample(name = "Mission Android 2026", modifier = Modifier.padding(innerPadding))
+                    TextExample(name = "Mission Android 2026", modifier = Modifier.padding(innerPadding))
+                    TextFieldExample()
                 }
             }
+
         }
     }
 }
