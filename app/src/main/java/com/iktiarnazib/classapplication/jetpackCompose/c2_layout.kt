@@ -1,6 +1,7 @@
 package com.iktiarnazib.classapplication.jetpackCompose
 
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -11,8 +12,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 
-@Preview(showBackground = true, showSystemUi = true
-)
 @Composable
 private fun RowExample() {
     Row (
@@ -23,4 +22,21 @@ private fun RowExample() {
         Text(text = "Banana",  fontSize = 30.sp);
         Text(text = "Mango",  fontSize = 30.sp); }
 
+}
+
+//column
+@Preview(showBackground = true, showSystemUi = true)
+@Preview
+@Composable
+private fun columnExample() {
+
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.SpaceEvenly,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        Text(text = "Apple", fontSize = 30.sp);
+        Text(text = "Banana",  fontSize = 30.sp);
+        Text(text = "Mango",  fontSize = 30.sp);
+    }
 }
