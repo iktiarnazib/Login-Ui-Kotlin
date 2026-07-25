@@ -21,7 +21,7 @@ fun RegisterPage(modifier: Modifier = Modifier, onLoginClick: () -> Unit = {
     ) {
         Text(text ="This is register page")
         Button(
-            onClick = { onLoginClick},
+            onClick = { onLoginClick()},
         ) {
             Text(text = "Login page")
         }
